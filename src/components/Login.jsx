@@ -21,38 +21,33 @@ const Login = () => {
 
     const handleSubmit=()=>{
         let message=validateData(email?.current?.value,password?.current?.value,FullName?.current?.value);
-        // console.log(email?.current?.value,password?.current?.value,FullName?.current?.value)
-        seterrorMessage(message);
         
-
+        seterrorMessage(message);
         if(message) return;
-
         if(!isSignInForm){
             createUserWithEmailAndPassword(auth, email?.current?.value, password?.current?.value)
                 .then((userCredential) => {
-                    // Signed up 
+                     
                     const user = userCredential.user;
-                    
                     updateProfile(auth.currentUser, {
                         displayName: FullName?.current?.value, photoURL: "https://example.com/jane-q-user/profile.jpg"
                       }).then(() => {
-                        // Profile updated!
+                        
                         const cusr=auth.currentUser;
                         const {uid,email,displayName,photoURL}=cusr;
                         dispatch(adduser({uid:uid,email:email,displayName:displayName,photoURL:photoURL}));
                         navigate("/browse")
-                        // ...
+                        
                       }).catch((error) => {
-                        // An error occurred
-                        // ...
+                        
                       });
-                    // ...
+                    
                 })
                 .catch((error) => {
                     const errorCode = error.code;
                     const errorMessageuser = error.message;
                     seterrorMessage(errorMessageuser)
-                    // ..
+                    
                 });
         }
         else{
@@ -61,9 +56,7 @@ const Login = () => {
                 // Signed in 
                 const user = userCredential.user;
                 console.log(user);
-                // dispatch(adduser(user))
-                navigate("/browse");
-                // ...
+                
             })
             .catch((error) => {
                 const errorCode = error.code;

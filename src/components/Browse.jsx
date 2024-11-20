@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from './Header'
+import useNowPlayingMovies from '../Hooks/useNowPlayingMovies'
 
-const Browse = () => {
+
+const Browse =  () => {
+  useNowPlayingMovies();
+  
+
+
   return (
     <div><Header></Header> Browse</div>
   )
