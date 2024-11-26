@@ -1,5 +1,4 @@
 export const validateData=(email,password,fullname)=>{
-    console.log(fullname,email,password);
     let vaildateName=/^[A-Za-z]+( [A-Za-z]+)*$/.test(fullname);
     
     const vaildMail=/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email);

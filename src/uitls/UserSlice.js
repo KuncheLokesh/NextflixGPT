@@ -5,7 +5,6 @@ const userSlice=createSlice({
     initialState:null,
     reducers :{
         adduser:(state,action)=>{
-            console.log(action.payload,"this is calling ")
             return action.payload;
         },
         removeuser:(state)=>{

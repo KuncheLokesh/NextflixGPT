@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import Header from './Header'
 import useNowPlayingMovies from '../Hooks/useNowPlayingMovies'
+import MainContainer from './MainContainer';
+import SecondaryContainer from './SecondaryContainer';
 
 
 const Browse =  () => {
   useNowPlayingMovies();
-  
-
 
   return (
-    <div><Header></Header> Browse</div>
+    <div>
+      <Header></Header>
+      <MainContainer/>
+      <SecondaryContainer/>
+    </div>
   )
 }
 
