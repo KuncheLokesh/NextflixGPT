@@ -12,9 +12,13 @@ const MainContainer = () => {
     const {title,overview}=movie;
 
   return (
-    <div>
-        <MovieTitle title={title} overview={overview}/>
+    <div className="relative h-screen w-full overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-full -z-10">
         <MovieVedio id={movie?.id} />
+      </div>
+      <div className="absolute top-1/4 left-10 text-white z-20">
+        <MovieTitle title={title} overview={overview} />
+      </div>
     </div>
   )
 }

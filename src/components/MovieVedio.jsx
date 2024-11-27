@@ -10,16 +10,16 @@ const MovieVedio = ({id}) => {
   useMovieTrailer(id);
 
   return (
-    <div>
-      <iframe 
-      width="560" 
-      height="315"
-       src={`https://www.youtube.com/embed/${storeTrialer?.key}?si=KP1VCJZjJDOB0lwf9`} 
-       title="YouTube video player" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-      referrerPolicy="strict-origin-when-cross-origin" 
+    <div className="w-screen ">
+      <iframe
+        className="w-screen aspect-video"
+        src={`https://www.youtube.com/embed/${storeTrialer?.key}?autoplay=1&mute=1&loop=1&playlist=${storeTrialer?.key}&rel=0&modestbranding=1&controls=0`}
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
       />
     </div>
+
   )
 }
 
