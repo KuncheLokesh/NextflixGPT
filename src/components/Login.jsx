@@ -6,6 +6,7 @@ import {auth} from "../uitls/firebaseconfig";
 import { useDispatch } from 'react-redux';
 import { adduser } from '../uitls/UserSlice';
 import { useNavigate } from 'react-router-dom';
+import { BG_IMG } from '../uitls/constant';
 
 const Login = () => {
     const email=useRef(null);
@@ -55,7 +56,7 @@ const Login = () => {
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
-                
+
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -67,7 +68,7 @@ const Login = () => {
   return (
     <div>
         <Header/>
-        <img  className="absolute" src='https://assets.nflxext.com/ffe/siteui/vlv3/81d64f3c-9627-4741-8f74-422bf35f9f1d/web/IN-en-20241104-TRIFECTA-perspective_55263ea2-af7f-40ed-9cf0-7029a9b9baf4_large.jpg' alt='image of Nteflix'/>
+        <img  className="absolute" src={BG_IMG} alt='image of Nteflix'/>
         <div className="w-full h-screen flex justify-center items-center">
             <form onSubmit={(e)=> e.preventDefault()} className="absolute bg-black bg-opacity-80 p-10 rounded-lg text-white w-full max-w-md">
                 <h1 className="mb-8 font-bold text-3xl">{isSignInForm ? 'Sign In' : 'Sign Up'}</h1>
